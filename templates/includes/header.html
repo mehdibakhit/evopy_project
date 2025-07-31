@@ -1,0 +1,44 @@
+{% load static %}
+<!-- Header Start -->
+<header class="main-header">
+    <div class="header-sticky">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo Start -->
+                <a class="navbar-brand" href="{% url "home_app:home" %}">
+                    <img src="{% static "images/logo.svg" %}" alt="Logo">
+                </a>
+                <!-- Logo End -->
+
+                <!-- Main Menu Start -->
+                <div class="collapse navbar-collapse main-menu">
+                    <div class="nav-menu-wrapper">
+                        <ul class="navbar-nav mr-auto" id="menu">
+                            <li class="nav-item "><a class="nav-link" href="{% url "home_app:home" %}">صفحه اصلی</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">درباره ما</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="{% url "blog_app:article_list" %}">مقالات</a>
+                            </li>
+
+                            <li class="nav-item"><a class="nav-link" href="{% url "blog_app:contact_us" %}">تماس با ما</a></li>
+                        </ul>
+                    </div>
+                    <!-- Header Btn Start -->
+                    <div class="header-btn d-inline-flex">
+                        <a href="tel:0612226893" class="btn-phone"><i
+                                class="fa-solid fa-phone-volume d-none d-xl-block"></i>
+                            <span dir="ltr">061
+                                42226893</span>
+                        </a>
+                    </div>
+                    <!-- Header Btn End -->
+                </div>
+                <!-- Main Menu End -->
+                <div class="navbar-toggle"></div>
+            </div>
+        </nav>
+        <div class="responsive-menu"></div>
+    </div>
+</header>
+<!-- Header End -->

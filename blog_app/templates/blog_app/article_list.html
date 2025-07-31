@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Page Header Start -->
+
+    <!-- Page Header Start -->
+    <div class="page-header bg-section parallaxie">
+        <!-- Page Header Box Start -->
+        <div class="page-header-box">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Page Header Content Start -->
+                        <div class="page-header-content">
+                            <h1 class="wow fadeInUp">آخرین <span>مقالات</span></h1>
+                            <nav class="wow fadeInUp" data-wow-delay="0.25s">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">صفحه اصلی</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">مقالات</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <!-- Page Header Content End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header Box End -->
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Page Blog Start -->
+    <div class="page-blog">
+        <div class="container">
+            <div class="row">
+                {% for article in articles %}
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Post Item Start -->
+                        <div class="post-item wow fadeInUp">
+                            <!-- Post Featured Image Start -->
+                            <div class="post-featured-image">
+                                <figure>
+                                    <a href="{{ article.get_abget_absolute_url }}" class="image-anime"
+                                       data-cursor-text="نمایش">
+                                        <img src="{{ article.image.url }}" alt="">
+                                    </a>
+                                </figure>
+
+                                <div class="post-btn">
+                                    <a href="{{ article.get_absolute_url }}"><img
+                                            src="{% static "images/arrow-white.svg" %}" alt=""></a>
+                                </div>
+                            </div>
+                            <!-- Post Featured Image End -->
+
+                            <!-- Post Item Content Start -->
+                            <div class="post-item-content">
+                                <h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+                                <p> {{ article.body|safe|striptags|truncatewords:30 }}
+
+                                </p>
+                            </div>
+                            <!-- Post Item Content End -->
+                        </div>
+                        <!-- Post Item End -->
+                    </div>
+                {% endfor %}
+
+
+                <div class="col-lg-12">
+                    <!-- Page Pagination Start -->
+                    {% if articles.has_other_pages %}
+                        <div class="page-pagination wow fadeInUp" data-wow-delay="1.2s">
+                            <ul class="pagination">
+                                <!-- فلش چپ (قبلی) فقط در غیر صفحه اول نمایش داده شود -->
+                                {% if articles.has_previous %}
+                                    <li><a href="?page={{ articles.previous_page_number }}"><i
+                                            class="fa-solid fa-arrow-right-long"></i></a></li>
+                                {% endif %}
+
+                                <!-- شماره صفحات -->
+                                {% for i in articles.paginator.page_range %}
+                                    {% if articles.number == i %}
+                                        <li class="active"><a href="#">{{ i }}</a></li>
+                                    {% else %}
+                                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                <!-- فلش راست (بعدی) فقط در غیر صفحه آخر نمایش داده شود -->
+                                {% if articles.has_next %}
+                                    <li><a href="?page={{ articles.next_page_number }}"><i
+                                            class="fa-solid fa-arrow-left-long"></i></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Page Pagination End -->
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Blog End -->
+{% endblock %}

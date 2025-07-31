@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}تماس با ما{% endblock %}
+
+{% block content %}
+
+    <!-- Page Header Start -->
+    <div class="page-header bg-section parallaxie">
+        <!-- Page Header Box Start -->
+        <div class="page-header-box">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Page Header Content Start -->
+                        <div class="page-header-content">
+                            <h1 class="wow fadeInUp">تماس <span>با ما</span></h1>
+                            <nav class="wow fadeInUp" data-wow-delay="0.25s">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">صفحه اصلی</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">تماس با ما</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <!-- Page Header Content End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header Box End -->
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Page Contact Us Start -->
+    <div class="page-contact-us">
+        <div class="container">
+            <div class="row section-row align-items-center">
+                <div class="col-lg-7 col-md-9">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">ارتباط با ما</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.25s">
+
+                            بیایید با هم برای <span>ایجاد زندگی و تجارت بهتر</span> در ارتباط باشیم
+
+                        </h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Contact Us Form Start -->
+                    <div class="contact-us-form">
+                        <!-- Contact Us Title Start -->
+                        <div class="contact-us-title">
+                            <h3 class="wow fadeInUp">ارسال پیام</h3>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">توان و انرژی خود را با راهنمایی متخصصین ما
+                                بیشتر کنید!
+                                <br>یک
+                                مشاوره رایگان برای موفقیت شخصی و تجاری .
+                            </p>
+                        </div>
+                        <!-- Contact Us Title End -->
+                        <!-- Contact Us Form Start -->
+                        <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp"
+                              data-wow-delay="0.4s">
+                            {% csrf_token %}
+                            <div class="row">
+                                {{ form }}
+                                <div class="col-lg-12">
+                                    <div class="contact-form-btn">
+                                        <!-- تغییر type به button و استفاده از onclick -->
+                                        <button type="button" class="btn-default"
+                                                onclick="document.getElementById('contactForm').submit()">
+                                            ارسال پیام
+                                        </button>
+                                        <div id="msgSubmit" class="h3 hidden"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- Contact Us Form End -->
+                        <!-- Contact Us Form End -->
+
+                    </div>
+                    <!-- Contact Us Form End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Contact Information Start -->
+                    <div class="contact-information">
+                        <!-- Contact Info Item Start -->
+                        <div class="contact-info-item wow fadeInUp">
+                            <!-- Contact Info Contact Start -->
+                            <div class="contact-info-contant">
+                                <h3>تلفن</h3>
+                                <p>همین امروز برای داشتن کوچ شخصی و رشد متحول کننده با ما تماس بگیرید!</p>
+                            </div>
+                            <!-- Contact Info Contact End -->
+
+                            <!-- Contact Info Body Start -->
+                            <div class="contact-info-body">
+                                <div class="icon-box">
+                                    <img src="{% static "images/icon-phone.svg" %}" alt="">
+                                </div>
+
+                                <div class="contact-info-title">
+                                    <h3 dir="ltr" class="">+1 840 841 256</h3>
+                                </div>
+                            </div>
+                            <!-- Contact Info Body End -->
+                        </div>
+                        <!-- Contact Info Item End -->
+
+                        <!-- Contact Info Item Start -->
+                        <div class="contact-info-item wow fadeInUp" data-wow-delay="0.25s">
+                            <!-- Contact Info Contact Start -->
+                            <div class="contact-info-contant">
+                                <h3>ایمیل</h3>
+                                <p>اکنون برای داشتن کوچ شخصی و رسیدن به بهترین ورژن خود ، به ما ایمیل بزنید!</p>
+                            </div>
+                            <!-- Contact Info Contact End -->
+
+                            <!-- Contact Info Body Start -->
+                            <div class="contact-info-body">
+                                <div class="icon-box">
+                                    <img src="{% static "images/icon-mail.svg" %}" alt="">
+                                </div>
+
+                                <div class="contact-info-title">
+                                    <h3>info@domain.com</h3>
+                                </div>
+                            </div>
+                            <!-- Contact Info Body End -->
+                        </div>
+                        <!-- Contact Info Item End -->
+
+                        <!-- Contact Info Item Start -->
+                        <div class="contact-info-item wow fadeInUp" data-wow-delay="0.5s">
+                            <!-- Contact Info Contact Start -->
+                            <div class="contact-info-contant">
+                                <h3>آدرس :</h3>
+                                <p>برای داشتن کوچ شخصی و رسیدن به سمت موفقیت پایدار به ما مراجعه کنید!</p>
+                            </div>
+                            <!-- Contact Info Contact End -->
+
+                            <!-- Contact Info Body Start -->
+                            <div class="contact-info-body">
+                                <div class="icon-box">
+                                    <img src="{% static "images/icon-location.svg" %}" alt="">
+                                </div>
+
+                                <div class="contact-info-title">
+                                    <h3>ایران ، تهران ، خیابان 1 ، کوچه 2 ، پلاک 3</h3>
+                                </div>
+                            </div>
+                            <!-- Contact Info Body End -->
+                        </div>
+                        <!-- Contact Info Item End -->
+                    </div>
+                    <!-- Contact Information End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Contact Us End -->
+
+    <!-- Google Map Start -->
+    <div class="google-map bg-section">
+        <div class="container-flude">
+            <div class="row no-gutters">
+                <div class="col-lg-12">
+                    <!-- Google Map Iframe Start -->
+                    <div class="google-map-iframe">
+                        <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207344.07543725704!2d51.18284813832613!3d35.707740216518474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff3dcd9%3A0xf0b3697c567024bc!2sTehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2s!4v1732708046843!5m2!1sen!2s"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <!-- Google Map Iframe End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Google Map End -->
+
+
+{% endblock %}
